@@ -8,6 +8,7 @@
     console.log(data);
 </script>
 
+<span id="_pageTop"></span>
 <TextModule value={data.homePage.homepageContent}></TextModule>
 
 {#each data.homePage.sections as section}

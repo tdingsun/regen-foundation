@@ -52,7 +52,7 @@ export async function getSiteInfo(): Promise<any> {
 
 export async function getTextOnlyPage(slug: string): Promise<any> {
     return await client.fetch(groq`
-        *[_id=="siteInfo"][0].textOnlyPages[][slug.current == '${slug}']
+        *[_id=="siteInfo"][0].textOnlyPages[][slug.current == '${slug}'][0]
     `)
 }
 
