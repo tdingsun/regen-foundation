@@ -8,6 +8,8 @@ import listModule from './listModule'
 import gridModule from './gridModule'
 import linkListModule from './linkListModule'
 
+import publication from './publication'
+
 export const schemaTypes = [
   blockContent,
   homePage,
@@ -17,4 +19,5 @@ export const schemaTypes = [
   listModule,
   linkListModule,
   gridModule,
+  publication
 ]

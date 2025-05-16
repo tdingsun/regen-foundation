@@ -20,6 +20,11 @@ export default defineType({
             type: 'string'
         }),
         defineField({
+            name: 'publicationPageHeader',
+            title: 'Publications Page Header',
+            type: 'string'
+        }),
+        defineField({
             name: 'textOnlyPages',
             title: 'Text Only Pages',
             description: 'ex: Privacy Policy or Terms of Use',

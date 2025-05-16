@@ -42,6 +42,8 @@ export default defineConfig({
               .id('homePage')
               .icon(DocumentIcon)
               .child(S.document().schemaType('homePage').documentId('homePage').title('Home Page')),
+            S.divider(),
+            S.documentTypeListItem('publication').title('Publications'),
           ]),
     }),
     visionTool(),
