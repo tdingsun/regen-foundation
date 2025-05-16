@@ -1,2 +1,13 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@theme {
+    --color-green: #2A5F4E;
+    --color-binary: #010101;
+    --color-field: #f0f0f0;
+}
+
+html, body {
+    background-color: var(--color-field);
+    color: var(--color-binary);
+}

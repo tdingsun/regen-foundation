@@ -36,10 +36,23 @@ export default defineType({
                     type: 'object',
                     fields: [
                         defineField({
-                            name: 'label',
-                            title: 'Label',
+                            name: 'title',
+                            title: 'Title',
                             type: 'string'
                         }),
+                        defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      validation: (Rule) => Rule.required(),
+      options: {
+        source: (_, {parent}) => {
+          return parent.title
+        },
+        maxLength: 96,
+      },
+    }),
+                        
                         defineField({
                             name: 'content',
                             title: 'Content',
