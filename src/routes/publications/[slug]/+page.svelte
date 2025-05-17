@@ -5,7 +5,7 @@
 </script>
 
 <div class="my-48 flex min-h-dvh w-dvw justify-center">
-	<div class="max-w-2xl text-sm">
+	<div class="max-w-2xl text-sm px-4">
 		<div class="mb-2 text-3xl font-bold">{data.content.title}</div>
 		<div class="flex gap-8 mb-8">
 			<div>By {data.content.author}</div>

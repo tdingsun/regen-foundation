@@ -10,15 +10,15 @@
 		: ''} border-green fixed top-0 w-dvw text-xs"
 >
 	<div
-		class="bg-field flex w-full items-center justify-between gap-8 border-b border-inherit pt-3.5 pr-8 pb-2.5 pl-4"
+		class="bg-field flex w-full items-center justify-between gap-8 border-b border-inherit pt-3.5 pr-4 sm:pr-8 pb-2.5 pl-2 sm:pl-4"
 	>
 		<a
 			href={page.url.pathname === '/' ? `#_pageTop` : `/#_pageTop`}
-			class="cursor-pointer select-none"
+			class="cursor-pointer select-none shrink-0"
 		>
-			<img src={logo} class="relative -top-2 w-40" />
+			<img src={logo} class="relative -top-2 w-40 shrink-0" />
 		</a>
-		<div>
+		<div class="hidden lg:block">
 			{#if blurb}
 				{blurb}
 			{/if}
