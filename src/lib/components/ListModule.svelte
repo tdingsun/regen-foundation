@@ -6,8 +6,7 @@
 </script>
 
 
-<div class="min-h-dvh w-dvw flex justify-center items-center">
-    <div class="flex flex-wrap justify-center max-w-4xl gap-4">
+    <div class="flex flex-wrap justify-center max-w-4xl gap-12 px-4">
 {#each listItems as item}
         <div class="flex gap-4">
             {#if item.image}
@@ -18,16 +17,19 @@
 
             {/if}
            <div>
-                {#if item.header}
-                                <div>{item.header}</div>
+                <div class="mb-4">
+     {#if item.header}
+                                <div class="font-bold leading-snug">{item.header}</div>
 
                 {/if}
                     {#if item.subheader}
-                                <div>{item.subheader}</div>
+                                <div class="text-xs">{item.subheader}</div>
 
                 {/if}
+                </div>
+           
                 {#if item.body}
-                    <div><BlockContent value={item.body}></BlockContent>
+                    <div class="text-xs"><BlockContent value={item.body}></BlockContent>
 
                 </div>
                 {/if}
@@ -39,4 +41,3 @@
     {/each}
     </div>
     
-</div>

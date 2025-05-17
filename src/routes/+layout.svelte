@@ -1,5 +1,5 @@
 <script lang="ts">
-	import NavHeader from '$lib/components/NavHeader.svelte';
+	import SiteHeader from '$lib/components/SiteHeader.svelte';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
 	import '../app.css';
 
@@ -51,5 +51,5 @@
 </svelte:head>
 
 {@render children()}
-<NavHeader blurb={data?.siteInfo?.headerText} sections={data?.sections}></NavHeader>
+<SiteHeader blurb={data?.siteInfo?.headerText} sections={data?.sections}></SiteHeader>
 <SiteFooter copyright={data?.siteInfo?.copyrightText} textOnlyPages={data?.siteInfo?.textOnlyPages}></SiteFooter>

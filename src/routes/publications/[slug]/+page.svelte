@@ -1,16 +1,17 @@
 <script lang="ts">
 	import BlockContent from '$lib/components/BlockContent/BlockContent.svelte';
-    let { data } = $props();
-    console.log(data);
-
+	let { data } = $props();
+	console.log(data);
 </script>
 
+<div class="my-48 flex min-h-dvh w-dvw justify-center">
+	<div class="max-w-2xl text-sm">
+		<div class="mb-2 text-3xl font-bold">{data.content.title}</div>
+		<div class="flex gap-8 mb-8">
+			<div>By {data.content.author}</div>
+			<div>Published {data.content.publishDate}</div>
+		</div>
 
-<div class="w-dvw min-h-dvh flex justify-center p-8 sm:py-24">
-    <div class="max-w-2xl text-sm">
-        <div>{data.content.title}</div>
-        <div>{data.content.author}</div>
-        <div>{data.content.publishDate}</div>
-        <BlockContent value={data.content.content}></BlockContent>
-    </div>
+		<BlockContent value={data.content.content}></BlockContent>
+	</div>
 </div>

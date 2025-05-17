@@ -5,8 +5,7 @@
 </script>
 
 
-<div class="min-h-dvh w-dvw flex justify-center items-center">
-    <div class="max-w-xl">
+    <div class="max-w-4xl w-full px-4">
+            
         <BlockContent {value}></BlockContent>
     </div>
-</div>

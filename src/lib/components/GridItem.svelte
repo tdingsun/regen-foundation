@@ -4,14 +4,17 @@
 
 	let { item } = $props();
 </script>
-
+<div class="flex flex-col gap-3">
 				{#if item.image}
-						<img src={getThumbnailImg(item.image)} />
+						<img src={getThumbnailImg(item.image)} class="max-w-36 self-center" />
 					{/if}
 					{#if item.header}
-						<div>{item.header}</div>
+						<div class="font-bold leading-snug">{item.header}</div>
 					{/if}
 					{#if item.body}
-						<div><BlockContent value={item.body}></BlockContent></div>
+						<div class="text-xs"><BlockContent value={item.body}></BlockContent></div>
 					{/if}
+
+
+</div>
 
