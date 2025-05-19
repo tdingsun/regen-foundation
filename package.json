@@ -40,6 +40,7 @@
 		"@sanity/client": "^7.2.1",
 		"@sanity/image-url": "^1.1.0",
 		"@sanity/types": "^3.88.3",
+		"@sveltejs/adapter-netlify": "^5.0.2",
 		"groq": "^3.88.3"
 	}
 }
