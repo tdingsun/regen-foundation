@@ -4,49 +4,55 @@
 	import '../app.css';
 
 	let { children, data } = $props();
+
+
+	let defaultTitle = "Regen Foundation"
+	let defaultDek = "Regen Foundation works to empower communities and co-create global systems to achieve and reward ecological regeneration."
+	let url = "https://regen.foundation";
+	let domain = "regen.foundation"
 </script>
 
 
 <svelte:head>
-	<link rel="icon" href={data?.siteInfo?.favicon?.url ? data.siteInfo.favicon.url : ''} />
-	<title>{data?.siteInfo?.siteTitle ? data.siteInfo.siteTitle : 'Friends With Benefits'}</title>
+	<link rel="icon" href={data?.siteMetadata?.favicon?.url ? data.siteMetadata.favicon.url : ''} />
+	<title>{data?.siteMetadata?.siteTitle ? data.siteMetadata.siteTitle : defaultTitle}</title>
 	<meta
 		name="description"
-		content={data?.siteInfo?.siteDescription
-			? data.siteInfo.siteDescription
-			: 'A new kind of social network.'}
+		content={data?.siteMetadata?.siteDescription
+			? data.siteMetadata.siteDescription
+			: defaultDek}
 	/>
 
 	<!-- Facebook Meta Tags -->
-	<meta property="og:url" content="https://www.fwb.help" />
+	<meta property="og:url" content={url} />
 	<meta property="og:type" content="website" />
 	<meta
 		property="og:title"
-		content={data.siteInfo.siteTitle ? data.siteInfo.siteTitle : 'Friends With Benefits'}
+		content={data.siteMetadata.siteTitle ? data.siteMetadata.siteTitle : defaultTitle}
 	/>
 	<meta
 		property="og:description"
-		content={data.siteInfo.siteDescription
-			? data.siteInfo.siteDescription
-			: 'A new kind of social network.'}
+		content={data.siteMetadata.siteDescription
+			? data.siteMetadata.siteDescription
+			: defaultDek}
 	/>
-	<meta property="og:image" content={data.siteInfo.siteImgURL ? data.siteInfo.siteImgURL : ''} />
+	<meta property="og:image" content={data.siteMetadata.siteImgURL ? data.siteMetadata.siteImgURL : ''} />
 
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta property="twitter:domain" content="fwb.help" />
-	<meta property="twitter:url" content="https://www.fwb.help" />
+	<meta property="twitter:domain" content={domain} />
+	<meta property="twitter:url" content={url} />
 	<meta
 		name="twitter:title"
-		content={data.siteInfo.siteTitle ? data.siteInfo.siteTitle : 'Friends With Benefits'}
+		content={data.siteMetadata.siteTitle ? data.siteMetadata.siteTitle : defaultTitle}
 	/>
 	<meta
 		name="twitter:description"
-		content={data.siteInfo.siteDescription
-			? data.siteInfo.siteDescription
-			: 'A new kind of social network.'}
+		content={data.siteMetadata.siteDescription
+			? data.siteMetadata.siteDescription
+			: defaultDek}
 	/>
-	<meta name="twitter:image" content={data.siteInfo.siteImgURL ? data.siteInfo.siteImgURL : ''} />
+	<meta name="twitter:image" content={data.siteMetadata.siteImgURL ? data.siteMetadata.siteImgURL : ''} />
 </svelte:head>
 
 {@render children()}
