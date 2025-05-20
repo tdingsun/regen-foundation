@@ -1,7 +1,6 @@
 <script lang="ts">
 	import BlockContent from '$lib/components/BlockContent/BlockContent.svelte';
 	let { data } = $props();
-	console.log(data);
 </script>
 
 <div class="my-48 flex min-h-dvh w-dvw justify-center">

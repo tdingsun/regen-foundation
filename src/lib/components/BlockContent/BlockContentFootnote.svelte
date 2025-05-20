@@ -2,7 +2,6 @@
     import BlockContent from "$lib/components/BlockContent/BlockContent.svelte";
 	import { onMount } from "svelte";
     let { portableText } = $props();
-    console.log(portableText);
 
     let footnote: HTMLSpanElement;
     let highlighted = $state(false);
