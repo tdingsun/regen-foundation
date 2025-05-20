@@ -98,11 +98,11 @@
 		></div>
 	</div>
 	<div
-		style="background-image: url('{dotsTexture}'); background-size: 500px;"
+		style="background-image: url('{dotsTexture}'); background-size: 500px; background-position: center 1px;"
 		class=" bg-field h-2 w-dvw border-b border-inherit bg-center"
 	></div>
 	<div
-		style="background-image: url('{gridTexture}'); background-size: 1000px; background-position: center 17.5px"
+		style="background-image: url('{gridTexture}'); background-size: 1000px; background-position: center 17.5px;"
 		class="bg-field h-4 w-dvw border-b border-inherit"
 	></div>
 </div>
