@@ -1,45 +1,72 @@
 <script lang="ts">
-	import BGGrid from './../lib/components/BGGrid.svelte';
+	import BGGrid from '$lib/components/BGGrid.svelte';
 	import ModuleHeader from '$lib/components/ModuleHeader.svelte';
 	import TextModule from '$lib/components/TextModule.svelte';
-    import GridModule from '$lib/components/GridModule.svelte';
+	import GridModule from '$lib/components/GridModule.svelte';
 	import ListModule from '$lib/components/ListModule.svelte';
 	import LinkListModule from '$lib/components/LinkListModule.svelte';
 	import BlockContent from '$lib/components/BlockContent/BlockContent.svelte';
-    let { data } = $props();
-    console.log(data);
+	import { onMount } from 'svelte';
+	import { siteState } from '$lib/states.svelte.js';
+	let { data } = $props();
+
+	let sectionDivs = $state({});
+
+	function isElementInViewport(el) {
+		var rect = el.getBoundingClientRect();
+		var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+		var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+		return (
+			rect.left >= 0 &&
+			rect.top >= 0 &&
+			rect.left + rect.width <= windowWidth &&
+			rect.top + rect.height <= windowHeight
+		);
+	}
+
+	onMount(() => {
+		document.addEventListener('scroll', (e) => {
+			let entries = Object.entries(sectionDivs);
+
+			for (let i = 0; i < entries.length; i++) {
+				if (isElementInViewport(entries[i][1])) {
+					siteState.sectionInView = entries[i][0];
+					break;
+				}
+			}
+			Object.values(sectionDivs).forEach((el) => {});
+		});
+	});
 </script>
 
 <BGGrid></BGGrid>
 
 <span id="_pageTop"></span>
-<div class="h-[calc(100dvh-12rem)] pt-60">
-    <div class="flex h-full w-dvw items-center justify-center px-4.5">
-        <div class="max-w-2xl text-lg">
-        <BlockContent value={data.homePage.homepageContent}></BlockContent>
-
-        </div>
-</div>
+<div  bind:this={sectionDivs["_pageTop"]} class="h-[calc(100dvh-12rem)] pt-60">
+	<div class="flex h-full w-dvw items-center justify-center px-4.5">
+		<div class="max-w-2xl text-lg">
+			<BlockContent value={data.homePage.homepageContent}></BlockContent>
+		</div>
+	</div>
 </div>
 
 {#each data.homePage.sections as section}
-    <div id={section.slug.current} class="pt-48 min-h-dvh">
-    <ModuleHeader title={section.title}></ModuleHeader>
+	<div id={section.slug.current} class="min-h-dvh pt-48">
+		<div bind:this={sectionDivs[section.slug.current]}>
+			<ModuleHeader title={section.title}></ModuleHeader>
+		</div>
 
-    <div class="flex w-dvw items-center justify-center px-4.5">
-
-    {#if section._type === 'textModule'}
-        <TextModule value={section.body}></TextModule>
-    {:else if section._type === 'gridModule'}
-        <GridModule gridItems={section.gridItems}></GridModule>
-    {:else if section._type === 'listModule'}
-        <ListModule listItems={section.listItems}></ListModule>
-    {:else if section._type === 'linkListModule'}
-        <LinkListModule listItems={section.listItems} ></LinkListModule>
-    {/if}
-    </div>
-
-
-    </div>
-
+		<div class="flex w-dvw items-center justify-center px-4.5">
+			{#if section._type === 'textModule'}
+				<TextModule value={section.body}></TextModule>
+			{:else if section._type === 'gridModule'}
+				<GridModule gridItems={section.gridItems}></GridModule>
+			{:else if section._type === 'listModule'}
+				<ListModule listItems={section.listItems}></ListModule>
+			{:else if section._type === 'linkListModule'}
+				<LinkListModule listItems={section.listItems}></LinkListModule>
+			{/if}
+		</div>
+	</div>
 {/each}
