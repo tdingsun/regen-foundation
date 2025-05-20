@@ -32,6 +32,7 @@
 			for (let i = 0; i < entries.length; i++) {
 				if (isElementInViewport(entries[i][1])) {
 					siteState.sectionInView = entries[i][0];
+					console.log(siteState.sectionInView);
 					break;
 				}
 			}
