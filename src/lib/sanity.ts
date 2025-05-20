@@ -64,7 +64,7 @@ export async function getHomePage(): Promise<any> {
 
 export async function getAllPublications(): Promise<any> {
     return await client.fetch(groq`
-        *[_type=="publication"] | order(publishDate desc)
+        *[_type=="publication"] | order(publishDate desc, title asc)
     `)
 }
 

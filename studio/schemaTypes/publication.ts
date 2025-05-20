@@ -31,6 +31,12 @@ export default defineType({
       type: 'date'
     }),
     defineField({
+      name: 'showInListView',
+      title: 'Show in List View?',
+      type: 'boolean',
+      initialValue: true,
+    }),
+    defineField({
       name: 'content',
       title: 'Content',
       type: 'blockContent',
