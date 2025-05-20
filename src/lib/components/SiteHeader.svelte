@@ -72,19 +72,19 @@
 			<div class="border-green flex w-full flex-grow border-b">
 				<div
 					style="background-image: url('{diagonalTexture}'); background-size: 1000px;"
-					class="border-green h-full basis-[30%] border-r bg-center"
+					class="border-green h-full basis-1/3 border-r bg-center"
 				></div>
 				<div
 					style="background-image: url('{dotsSmallTexture}'); background-size: 1500px;"
-					class="border-green h-full basis-[18%] border-r bg-center"
+					class="border-green h-full basis-1/6 border-r bg-center"
 				></div>
 				<div
 					style="background-image: url('{gridTexture}'); background-size: 1000px;"
-					class="border-green h-full basis-[33%] border-r bg-center"
+					class="border-green h-full basis-1/3 border-r bg-center"
 				></div>
 				<div
 					style="background-image: url('{diagonalTexture}'); background-size: 1000px;"
-					class="border-green h-full basis-[19%] bg-center"
+					class="border-green h-full basis-1/6 bg-center"
 				></div>
 			</div>
 		</div>
