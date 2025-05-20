@@ -52,7 +52,7 @@
 </div>
 
 {#each data.homePage.sections as section}
-	<div id={section.slug.current} class="min-h-dvh pt-48">
+	<div id={section.slug.current} class="min-h-dvh pt-24 sm:pt-48">
 		<div bind:this={sectionDivs[section.slug.current]}>
 			<ModuleHeader title={section.title}></ModuleHeader>
 		</div>

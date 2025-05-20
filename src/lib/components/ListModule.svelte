@@ -7,7 +7,7 @@
 
 <div class="flex max-w-4xl flex-wrap justify-center gap-12 px-4">
 	{#each listItems as item}
-		<div class="flex gap-4">
+		<div class="flex flex-col sm:flex-row gap-4">
 			{#if item.image}
 				<div class="w-48 shrink-0">
 					<img class="w-full" src={getThumbnailImg(item.image)} />

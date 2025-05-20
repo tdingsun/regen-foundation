@@ -2,6 +2,7 @@
 	import SiteHeader from '$lib/components/SiteHeader.svelte';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
 	import '../app.css';
+	import MobileHeader from '$lib/components/MobileHeader.svelte';
 
 	let { children, data } = $props();
 
@@ -56,5 +57,11 @@
 </svelte:head>
 
 {@render children()}
+<div class="hidden sm:block">
 <SiteHeader blurb={data?.siteInfo?.headerText} sections={data?.sections}></SiteHeader>
+
+</div>
+<div class="block sm:hidden">
+<MobileHeader blurb={data?.siteInfo?.headerText} sections={data?.sections}></MobileHeader>
+</div>
 <SiteFooter copyright={data?.siteInfo?.copyrightText} textOnlyPages={data?.siteInfo?.textOnlyPages}></SiteFooter>
