@@ -1,4 +1,5 @@
 <script lang="ts">
+	import BGGrid from './../lib/components/BGGrid.svelte';
 	import ModuleHeader from '$lib/components/ModuleHeader.svelte';
 	import TextModule from '$lib/components/TextModule.svelte';
     import GridModule from '$lib/components/GridModule.svelte';
@@ -9,10 +10,12 @@
     console.log(data);
 </script>
 
+<BGGrid></BGGrid>
+
 <span id="_pageTop"></span>
 <div class="h-[calc(100dvh-12rem)] pt-60">
     <div class="flex h-full w-dvw items-center justify-center px-4.5">
-        <div class="max-w-2xl">
+        <div class="max-w-2xl text-lg">
         <BlockContent value={data.homePage.homepageContent}></BlockContent>
 
         </div>

@@ -1,14 +1,51 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
+@font-face {
+    font-family: "Earth";
+    src: url("/fonts/RegularTrial.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Earth";
+    src: url("/fonts/ItalicTrial.otf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Earth";
+    src: url("/fonts/BoldTrial.otf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Earth";
+    src: url("/fonts/BoldItalicTrial.otf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+
 @theme {
     --color-green: #2A5F4E;
+    --color-light-green: #8FBFB0;
     --color-binary: #010101;
     --color-field: #f0f0f0;
+
+    --font-earth: "Earth", sans-serif;
 }
 
 html, body {
-    background-color: var(--color-field);
     color: var(--color-binary);
     scroll-behavior: smooth;
+    font-family: "Earth", sans-serif;
+
+}
+
+html {
+        background-color: var(--color-field);
 }

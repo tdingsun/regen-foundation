@@ -5,7 +5,7 @@
 </script>
 
 
-    <div class="max-w-4xl w-full px-4">
+    <div class="max-w-4xl w-full px-4 text-lg">
             
         <BlockContent {value}></BlockContent>
     </div>

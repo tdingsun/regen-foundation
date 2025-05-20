@@ -9,10 +9,10 @@
 						<img src={getThumbnailImg(item.image)} class="max-w-36 self-center" />
 					{/if}
 					{#if item.header}
-						<div class="font-bold leading-snug">{item.header}</div>
+						<div class="font-bold leading-snug text-lg">{item.header}</div>
 					{/if}
 					{#if item.body}
-						<div class="text-xs"><BlockContent value={item.body}></BlockContent></div>
+						<div class="text-sm"><BlockContent value={item.body}></BlockContent></div>
 					{/if}
 
 
