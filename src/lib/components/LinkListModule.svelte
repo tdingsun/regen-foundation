@@ -4,7 +4,7 @@
 	let { listItems } = $props();
 </script>
 
-	<div class="flex flex-col max-w-4xl w-full gap-4 text-xs px-4">
+	<div class="flex flex-col max-w-4xl w-full gap-4 text-sm px-4">
 		{#each listItems as item}
 			<div class="flex gap-4">
 				{#if item.subinfo}

@@ -25,7 +25,23 @@ export default defineType({
       name: 'body',
       title: 'Content',
       type: 'blockContent'
+    }),
+    defineField({
+      name: 'cta',
+      title: 'Call To Action Button',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'label',
+          title: 'Label',
+          type: 'string',
+        }),
+        defineField({
+          name: 'link',
+          title: 'Link',
+          type: 'string',
+        })
+      ]
     })
-    
   ],
 })

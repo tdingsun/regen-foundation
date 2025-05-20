@@ -59,7 +59,7 @@
 
 		<div class="flex w-dvw items-center justify-center px-4.5">
 			{#if section._type === 'textModule'}
-				<TextModule value={section.body}></TextModule>
+				<TextModule value={section.body} cta={section.cta}></TextModule>
 			{:else if section._type === 'gridModule'}
 				<GridModule gridItems={section.gridItems}></GridModule>
 			{:else if section._type === 'listModule'}
