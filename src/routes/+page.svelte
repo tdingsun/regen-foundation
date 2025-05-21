@@ -8,6 +8,7 @@
 	import BlockContent from '$lib/components/BlockContent/BlockContent.svelte';
 	import { onMount } from 'svelte';
 	import { siteState } from '$lib/states.svelte.js';
+	import NewsletterForm from '$lib/components/NewsletterForm.svelte';
 	let { data } = $props();
 
 	let sectionDivs = $state({});
@@ -68,5 +69,9 @@
 				<LinkListModule listItems={section.listItems}></LinkListModule>
 			{/if}
 		</div>
+
+		{#if section.slug.current === 'news'}
+			<NewsletterForm headerText={data.siteInfo.newsletterHeaderText} buttonText={data.siteInfo.newsletterButtonText} successText={data.siteInfo.newsletterSuccessText}></NewsletterForm>
+		{/if}
 	</div>
 {/each}

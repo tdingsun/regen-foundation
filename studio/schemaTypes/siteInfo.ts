@@ -25,6 +25,21 @@ export default defineType({
             type: 'string'
         }),
         defineField({
+            name: 'newsletterHeaderText',
+            title: 'Newsleader Header',
+            type: 'string'
+        }),
+        defineField({
+            name: 'newsletterButtonText',
+            title: 'Newsleader Submit Button Label',
+            type: 'string'
+        }),
+        defineField({
+            name: 'newsletterSuccessText',
+            title: 'Newsleader Success Message',
+            type: 'string'
+        }),
+        defineField({
             name: 'textOnlyPages',
             title: 'Text Only Pages',
             description: 'ex: Privacy Policy or Terms of Use',
