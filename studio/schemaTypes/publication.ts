@@ -37,6 +37,12 @@ export default defineType({
       initialValue: true,
     }),
     defineField({
+      name: 'externalLink',
+      title: 'External Link',
+      type: 'string',
+      description: "Link to an external site rather than creating an internal content page."
+    }),
+    defineField({
       name: 'content',
       title: 'Content',
       type: 'blockContent',

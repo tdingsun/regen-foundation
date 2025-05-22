@@ -11,7 +11,7 @@
 			{#each data.publications as publication}
 				{#if publication.showInListView}
 				<div class=" group border-t border-green py-2">
-					<a href="/publications/{publication.slug.current}">
+					<a target="{publication.externalLink ? '_blank' : '_top'}" href="{publication.externalLink ? publication.externalLink : `/publications/${publication.slug.current}`}">
 						<div class="mb-2">
 							<div class="mb-2 font-bold group-hover:underline">{publication.title}</div>
 							<div class="flex gap-8 text-xs">
