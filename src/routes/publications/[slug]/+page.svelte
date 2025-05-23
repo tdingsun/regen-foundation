@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { formatDate } from '$lib/utils';
 	import BlockContent from '$lib/components/BlockContent/BlockContent.svelte';
 	let { data } = $props();
 </script>
@@ -8,7 +9,7 @@
 		<div class="mb-2 text-3xl font-bold">{data.content.title}</div>
 		<div class="flex gap-8 mb-8">
 			<div>By {data.content.author}</div>
-			<div>Published {data.content.publishDate}</div>
+			<div>Published {formatDate(data.content.publishDate)}</div>
 		</div>
 
 		<BlockContent value={data.content.content}></BlockContent>
