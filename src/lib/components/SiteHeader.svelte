@@ -25,9 +25,9 @@
 
 		<div class=" flex h-18 flex-grow flex-col">
 			<div class="border-green flex h-12 items-center justify-between border-b">
-				<div class="">
+				<div class="text-[12px]">
 					{#if blurb}
-						<span class="hidden min-[1151px]:flex px-6">
+						<span class="hidden min-[1090px]:flex px-6">
 							{blurb}
 						</span>
 					{/if}
