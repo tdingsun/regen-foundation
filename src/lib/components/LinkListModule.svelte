@@ -8,7 +8,7 @@
 		{#each listItems as item}
 			<div class="flex gap-4">
 				{#if item.subinfo}
-					<div class="w-32">{item.subinfo}</div>
+					<div class="w-32 shrink-0">{item.subinfo}</div>
 				{/if}
 				{#if item.title}
                     {#if item.link}

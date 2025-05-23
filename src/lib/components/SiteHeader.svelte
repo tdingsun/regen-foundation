@@ -7,7 +7,7 @@
 	import gridTexture from '$lib/images/GRID.png';
 	import vertTexture from '$lib/images/VERT.png';
 	import { siteState } from '$lib/states.svelte';
-	let { blurb, sections } = $props();
+	let { blurb, sections, donateLabel, donateLink } = $props();
 </script>
 
 <div
@@ -20,14 +20,14 @@
 			href={page.url.pathname === '/' ? `#_pageTop` : `/#_pageTop`}
 			class="bg-green shrink-0 cursor-pointer select-none"
 		>
-			<img src={logo} class="relative h-18 shrink-0 px-4 py-2" />
+			<img src={logo} class="relative h-18 shrink-0 pl-4 pr-8 py-2" />
 		</a>
 
 		<div class=" flex h-18 flex-grow flex-col">
 			<div class="border-green flex h-12 items-center justify-between border-b">
-				<div class="p-4">
+				<div class="">
 					{#if blurb}
-						<span class="hidden md:flex">
+						<span class="hidden min-[1151px]:flex px-6">
 							{blurb}
 						</span>
 					{/if}
@@ -36,12 +36,11 @@
 					{#if sections}
 						<div class="flex">
 							{#each sections as section}
-								{#if section.slug.current !== 'support'}
 									<a
 										href={page.url.pathname === '/'
 											? `#${section.slug.current}`
 											: `/#${section.slug.current}`}
-										class="relative p-4 first:pl-8 last:pr-8 group {siteState.sectionInView ===
+										class="relative p-3 first:pl-6 last:pr-6 md:p-4 md:first:pl-8 md:last:pr-8 group {siteState.sectionInView ===
 										section.slug.current
 											? 'font-bold'
 											: ''}"
@@ -51,21 +50,16 @@
 										</span>
 										<span aria-hidden="true" class="font-bold opacity-0 pointer-events-none">{section.title}</span>
 									</a>
-								{/if}
 							{/each}
 						</div>
 
-						{#each sections as section}
-							{#if section.slug.current === 'support'}
+							{#if donateLabel && donateLink}
 								<a
-									href={page.url.pathname === '/'
-										? `#${section.slug.current}`
-										: `/#${section.slug.current}`}
-									class="text-field bg-green flex h-full items-center px-6 text-base font-bold hover:underline"
-									>{section.title}</a
+									href={donateLink}
+									class="text-field bg-green flex h-full items-center px-8 text-sm font-bold hover:underline"
+									>{donateLabel}</a
 								>
 							{/if}
-						{/each}
 					{/if}
 				</div>
 			</div>

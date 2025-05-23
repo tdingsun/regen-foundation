@@ -10,7 +10,7 @@
 		{#if item.link}
 			<a href={item.link} target="_blank" class="group sm:basis-1/4 flex flex-col gap-4">
 				{#if item.image}
-					<img src={getThumbnailImg(item.image)} class="max-w-36 self-center" />
+					<img src={getThumbnailImg(item.image)} class=" max-w-48 sm:max-w-36 self-center" />
 				{/if}
 				{#if item.header}
 					<div class="text-lg leading-snug font-bold group-hover:underline">{item.header}</div>
@@ -18,14 +18,14 @@
 			</a>
 		{:else}
 			{#if item.image}
-				<img src={getThumbnailImg(item.image)} class="max-w-36 self-center" />
+				<img src={getThumbnailImg(item.image)} class="max-w-48 sm:max-w-36 self-center" />
 			{/if}
 			{#if item.header}
 				<div class="text-lg leading-snug font-bold">{item.header}</div>
 			{/if}
 		{/if}
 		{#if item.body}
-			<div class="text-sm"><BlockContent value={item.body}></BlockContent></div>
+			<div class="text-xs"><BlockContent value={item.body}></BlockContent></div>
 		{/if}
 	</div>
 </div>

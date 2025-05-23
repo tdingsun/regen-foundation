@@ -40,6 +40,16 @@ export default defineType({
             type: 'string'
         }),
         defineField({
+            name: 'donateButtonLabel',
+            title: 'Donate Button Label',
+            type: 'string'
+        }),
+        defineField({
+            name: 'donateButtonLink',
+            title: 'Donate Button Link',
+            type: 'string'
+        }),
+        defineField({
             name: 'textOnlyPages',
             title: 'Text Only Pages',
             description: 'ex: Privacy Policy or Terms of Use',

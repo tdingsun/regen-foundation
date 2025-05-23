@@ -58,10 +58,10 @@
 
 {@render children()}
 <div class="hidden sm:block">
-<SiteHeader blurb={data?.siteInfo?.headerText} sections={data?.sections}></SiteHeader>
+<SiteHeader donateLabel={data?.siteInfo?.donateButtonLabel} donateLink={data?.siteInfo?.donateButtonLink} blurb={data?.siteInfo?.headerText} sections={data?.sections}></SiteHeader>
 
 </div>
 <div class="block sm:hidden">
-<MobileHeader blurb={data?.siteInfo?.headerText} sections={data?.sections}></MobileHeader>
+<MobileHeader donateLabel={data?.siteInfo?.donateButtonLabel} donateLink={data?.siteInfo?.donateButtonLink} blurb={data?.siteInfo?.headerText} sections={data?.sections}></MobileHeader>
 </div>
 <SiteFooter copyright={data?.siteInfo?.copyrightText} textOnlyPages={data?.siteInfo?.textOnlyPages}></SiteFooter>

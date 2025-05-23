@@ -37,6 +37,9 @@
     --color-field: #f0f0f0;
 
     --font-earth: "Earth", sans-serif;
+    --text-xs: 14px;
+    --text-sm: 16px;
+    --text-lg: 18px;
 }
 
 html, body {

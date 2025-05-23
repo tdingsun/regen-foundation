@@ -37,6 +37,12 @@ export default defineType({
       initialValue: true,
     }),
     defineField({
+      name: 'dek',
+      title: 'Description',
+      type: 'blockContent',
+      description: "Short description that will show up in the publication list view."
+    }),
+    defineField({
       name: 'externalLink',
       title: 'External Link',
       type: 'string',

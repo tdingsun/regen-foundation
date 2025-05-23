@@ -7,7 +7,7 @@
 	import gridTexture from '$lib/images/GRID.png';
 	import vertTexture from '$lib/images/VERT.png';
 	import { siteState } from '$lib/states.svelte';
-	let { blurb, sections } = $props();
+	let { blurb, sections, donateLabel, donateLink } = $props();
     let menuExpanded = $state(false);
 </script>
 
@@ -23,7 +23,7 @@
 		>
 			<img src={logo} class="relative h-16 shrink-0 px-4 py-2" />
 		</a>
-        <div onclick={() => {menuExpanded = !menuExpanded}} class="h-full flex flex-col p-5 gap-2 justify-between">
+        <div onclick={() => {menuExpanded = !menuExpanded}} class="h-full flex flex-col p-5 gap-2 justify-between cursor-pointer">
             <div class="bg-field h-1  w-8">
             </div>
             <div class="bg-field h-1 w-8">
@@ -37,7 +37,6 @@
 {#if sections}
 						<div class="flex flex-col bg-field">
 							{#each sections as section}
-								{#if section.slug.current !== 'support'}
 									<a onclick={() => menuExpanded = false}
 										href={page.url.pathname === '/'
 											? `#${section.slug.current}`
@@ -52,21 +51,16 @@
 										</span>
 										<span aria-hidden="true" class="font-bold opacity-0 pointer-events-none">{section.title}</span>
 									</a>
-								{/if}
 							{/each}
 						</div>
 
-						{#each sections as section}
-							{#if section.slug.current === 'support'}
+							{#if donateLabel && donateLink}
 								<a onclick={() => menuExpanded = false}
-									href={page.url.pathname === '/'
-										? `#${section.slug.current}`
-										: `/#${section.slug.current}`}
+									href={donateLink}
 									class="text-field bg-green flex  items-center p-4 text-base font-bold hover:underline"
-									>{section.title}</a
+									>{donateLabel}</a
 								>
 							{/if}
-						{/each}
 					{/if}
         </div>
         

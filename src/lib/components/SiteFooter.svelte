@@ -4,11 +4,11 @@
 </script>
 
 <div class="{page.url.pathname.startsWith('/doc') ? 'hidden' : ''} text-xs">
-	<div class="fixed bottom-4 left-8">
+	<div class="fixed bottom-4 left-4 sm:left-8">
 		<div>{copyright}</div>
 	</div>
 
-	<div class="fixed right-8 bottom-4 flex gap-8">
+	<div class="fixed right-4 sm:right-8 bottom-4 flex flex-col text-right sm:flex-row gap-y-1 gap-x-8">
 		{#each textOnlyPages as page}
 			<a href="/doc/{page.slug.current}" target="_blank" class="hover:underline">{page.title}</a>
 		{/each}

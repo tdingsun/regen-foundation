@@ -5,9 +5,9 @@
 	let { listItems } = $props();
 </script>
 
-<div class="flex max-w-4xl flex-wrap justify-center gap-12 px-4">
+<div class="flex max-w-4xl flex-wrap justify-center gap-18 px-4">
 	{#each listItems as item}
-		<div class="flex flex-col sm:flex-row gap-4">
+		<div class="flex flex-col sm:flex-row gap-6">
 			{#if item.image}
 				<div class="w-48 shrink-0">
 					<img class="w-full" src={getThumbnailImg(item.image)} />
@@ -19,12 +19,12 @@
 						<div class="leading-snug font-bold text-lg">{item.header}</div>
 					{/if}
 					{#if item.subheader}
-						<div class="text-sm">{item.subheader}</div>
+						<div class="text-xs">{item.subheader}</div>
 					{/if}
 				</div>
 
 				{#if item.body}
-					<div class="text-sm"><BlockContent value={item.body}></BlockContent></div>
+					<div class="text-xs leading-[1.5]"><BlockContent value={item.body}></BlockContent></div>
 				{/if}
 			</div>
 		</div>
